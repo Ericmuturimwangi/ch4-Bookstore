@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'acconts',
     'pages',
+
 ]
 
 MIDDLEWARE = [
@@ -124,3 +125,4 @@ AUTH_USER_MODEL = 'acconts.CustomUser'
 
 LOGIN_REDIRECT_URL = "home"
 LOGOUT_REDIRECT_URL = "home"
+
