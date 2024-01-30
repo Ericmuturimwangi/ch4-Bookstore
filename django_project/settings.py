@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'acconts',
     'pages',
+    'books.apps.BooksConfig',
 
 ]
 
