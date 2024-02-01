@@ -1,4 +1,4 @@
-
+import socket 
 from pathlib import Path
 
 
@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
     'allauth',
     'allauth.account',
+    'debug_toolbar'
     'acconts',
     'pages',
     'books.apps.BooksConfig',
@@ -45,6 +46,7 @@ MIDDLEWARE = [
     'allauth.account.middleware.AccountMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'django_project.urls'
@@ -154,3 +156,7 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
+
+
+hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
+INTERNAL_IPS = [ip[:-1] + "1" for ip in ips]
